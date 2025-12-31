@@ -1,17 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
-import { Coffee, Heart, Wifi } from 'lucide-react';
+import { Coffee, Heart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [apiKeySuffix, setApiKeySuffix] = useState('');
 
   useEffect(() => {
-    // Verifica se a API Key está presente no ambiente
-    const key = process.env.API_KEY;
-    if (key) {
-      setIsConnected(true);
-      setApiKeySuffix(key.slice(-4));
+    // Acessa a API KEY de forma segura para o compilador
+    try {
+      const key = process.env.API_KEY;
+      if (key && typeof key === 'string') {
+        setIsConnected(true);
+        setApiKeySuffix(key.slice(-4));
+      }
+    } catch (e) {
+      console.debug('API Key not available in this context');
     }
   }, []);
 

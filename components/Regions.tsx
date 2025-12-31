@@ -18,28 +18,24 @@ const Regions: React.FC = () => {
           {REGIONS.map((region) => (
             <div 
               key={region.id} 
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-amber-600"
             >
-              <div className="h-48 overflow-hidden relative">
-                <img 
-                  src={region.imageUrl} 
-                  alt={region.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-amber-600" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-700">Brasil</span>
-                </div>
+              <div className="flex items-center gap-2 mb-4 text-amber-700">
+                <MapPin className="w-4 h-4" />
+                <span className="text-[10px] font-black uppercase tracking-widest">Origem Brasil</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-stone-900 serif">{region.name}</h3>
-                <p className="text-stone-600 text-sm leading-relaxed mb-4">
-                  {region.description}
-                </p>
-                <button className="text-amber-700 font-bold text-xs uppercase tracking-widest hover:text-amber-800 flex items-center gap-1 transition-colors">
-                  Saiba Mais <span className="text-lg">→</span>
-                </button>
-              </div>
+              
+              <h3 className="text-xl font-bold mb-4 text-stone-900 serif group-hover:text-amber-700 transition-colors">
+                {region.name}
+              </h3>
+              
+              <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                {region.description}
+              </p>
+              
+              <button className="text-stone-400 font-bold text-xs uppercase tracking-widest group-hover:text-amber-700 flex items-center gap-1 transition-all">
+                Explorar <span className="text-lg transition-transform group-hover:translate-x-1">→</span>
+              </button>
             </div>
           ))}
         </div>

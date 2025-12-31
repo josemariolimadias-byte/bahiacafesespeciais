@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram, Facebook, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -20,7 +20,9 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-stone-400 uppercase tracking-widest">Email</p>
-                  <p className="text-stone-900 font-semibold">ola@bahiacafes.com.br</p>
+                  <a href="mailto:contato@bahiacafesespeciais.com.br" className="text-stone-900 font-semibold hover:text-amber-700 transition-colors">
+                    contato@bahiacafesespeciais.com.br
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -29,7 +31,9 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-stone-400 uppercase tracking-widest">WhatsApp</p>
-                  <p className="text-stone-900 font-semibold">(71) 99999-9999</p>
+                  <a href="https://wa.me/5571999560936" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-semibold hover:text-amber-700 transition-colors">
+                    (71) 9 9956-0936
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -44,11 +48,14 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="mt-12 flex gap-4">
-              <a href="#" className="w-10 h-10 border-2 border-stone-100 rounded-full flex items-center justify-center hover:bg-stone-50 transition-colors">
-                <Instagram className="w-5 h-5 text-stone-600" />
-              </a>
-              <a href="#" className="w-10 h-10 border-2 border-stone-100 rounded-full flex items-center justify-center hover:bg-stone-50 transition-colors">
-                <Facebook className="w-5 h-5 text-stone-600" />
+              <a 
+                href="https://www.instagram.com/bahiacafesespeciais/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-stone-100 rounded-full flex items-center justify-center hover:bg-amber-50 hover:border-amber-200 transition-all group"
+                aria-label="Instagram Bahia Cafés Especiais"
+              >
+                <Instagram className="w-6 h-6 text-stone-600 group-hover:text-amber-700 transition-colors" />
               </a>
             </div>
           </div>
@@ -75,12 +82,17 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <label className="block text-sm font-bold text-stone-700 mb-2">Assunto</label>
-                <select className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all appearance-none bg-white">
-                  <option>Dúvida Geral</option>
-                  <option>Assinaturas</option>
-                  <option>Loja Online</option>
-                  <option>Parcerias</option>
-                </select>
+                <div className="relative">
+                  <select className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all appearance-none bg-white">
+                    <option>Dúvida Geral</option>
+                    <option>Assinaturas</option>
+                    <option>Loja Online</option>
+                    <option>Parcerias</option>
+                  </select>
+                  <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-stone-400">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-bold text-stone-700 mb-2">Mensagem</label>

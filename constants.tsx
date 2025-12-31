@@ -24,7 +24,7 @@ export const REGIONS: CoffeeRegion[] = [
     id: 'cerrado-mineiro',
     name: 'Cerrado Mineiro',
     description: 'Primeira região com Denominação de Origem no Brasil, famosa por cafés intensos e persistentes.',
-    imageUrl: 'https://images.unsplash.com/photo-1559056191-7440407a1195?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: 'chapada-diamantina',
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
     name: 'Reserva Chapada',
     region: 'Chapada Diamantina',
     price: 45.00,
-    description: 'Notas de jasmim e mel. Processo natural.',
+    description: 'Este microlote exclusivo da Chapada Diamantina apresenta um corpo sedoso com acidez cítrica brilhante. Revela notas sensoriais complexas de jasmim, mel silvestre e um toque sutil de limão siciliano. O processo de secagem natural preserva a doçura intensa, resultando em uma finalização longa e floral.',
     imageUrl: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=800'
   },
   {
@@ -87,15 +87,15 @@ export const PRODUCTS: Product[] = [
     name: 'Vulcano Blend',
     region: 'Norte do Paraná',
     price: 38.00,
-    description: 'Corpo denso, notas de caramelo tostado.',
-    imageUrl: 'https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&q=80&w=800'
+    description: 'Um café potente e estruturado, originário dos solos vulcânicos ricos em minerais. Este blend destaca-se pela doçura marcante que remete ao caramelo tostado e chocolate amargo. Possui corpo denso e aveludado, com baixíssima acidez, sendo a escolha ideal para quem busca uma xícara clássica e reconfortante.',
+    imageUrl: 'https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&q=80&w=800'
   },
   {
     id: '3',
     name: 'Altitude Blue',
     region: 'Sul de Minas',
     price: 42.00,
-    description: 'Acidez tartárica, frutas vermelhas.',
-    imageUrl: 'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&q=80&w=800'
+    description: 'Produzido nas altas montanhas mineiras, o Altitude Blue é uma explosão de vivacidade. Com uma acidez tartárica que lembra uvas verdes e frutas vermelhas frescas, este café surpreende pelo frescor e leveza. Apresenta notas de açúcar mascavo e um aroma perfumado que preenche o ambiente logo na primeira extração.',
+    imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800'
   }
 ];

@@ -7,28 +7,16 @@ const Footer: React.FC = () => {
   const [apiKeySuffix, setApiKeySuffix] = useState('');
 
   useEffect(() => {
-    // Acessa a API KEY de forma segura tanto para o compilador quanto para o runtime
-    const checkApiKey = () => {
-      try {
-        // Tenta acessar via globalThis para evitar erros de 'process is not defined' no navegador
-        // antes de o bundler (Vite/Webpack) injetar o valor.
-        const globalEnv = (globalThis as any).process?.env || {};
-        const key = globalEnv.API_KEY || (typeof process !== 'undefined' ? process.env.API_KEY : undefined);
-
-        if (key && typeof key === 'string' && key.length > 0) {
-          setIsConnected(true);
-          setApiKeySuffix(key.slice(-4));
-        }
-      } catch (e) {
-        console.warn('API Status: Não foi possível verificar a chave de API.', e);
-      }
-    };
-
-    checkApiKey();
+    // Com o 'define' no vite.config.ts, process.env.API_KEY torna-se disponível
+    const key = process.env.API_KEY;
     
-    // Pequeno intervalo para garantir que o ambiente foi totalmente carregado se necessário
-    const timer = setTimeout(checkApiKey, 500);
-    return () => clearTimeout(timer);
+    if (key && typeof key === 'string' && key.length > 4) {
+      setIsConnected(true);
+      setApiKeySuffix(key.slice(-4));
+    } else if (key && typeof key === 'string' && key.length > 0) {
+      setIsConnected(true);
+      setApiKeySuffix(key);
+    }
   }, []);
 
   return (
@@ -46,26 +34,26 @@ const Footer: React.FC = () => {
               Levando os melhores grãos de origem controlada para todos os cantos do Brasil. Qualidade, rastreabilidade e paixão pelo café especial.
             </p>
             
-            {/* API Status Indicator - Verde Pulsante conforme solicitado */}
+            {/* API Status Indicator - Verde Pulsante */}
             {isConnected ? (
-              <div className="flex items-center gap-3 bg-white border border-green-100 p-3.5 rounded-2xl shadow-sm inline-flex">
-                <div className="relative flex h-4 w-4">
+              <div className="flex items-center gap-3 bg-white border border-green-200 p-4 rounded-2xl shadow-sm inline-flex">
+                <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-black text-green-700 uppercase tracking-wider leading-none">
+                  <span className="text-[11px] font-black text-green-700 uppercase tracking-wider leading-none">
                     API CONECTADA
                   </span>
                   <span className="text-[9px] text-stone-400 font-mono mt-1 font-bold">
-                    ID: ****{apiKeySuffix}
+                    CHAVE: ****{apiKeySuffix}
                   </span>
                 </div>
               </div>
             ) : (
-              <div className="flex items-center gap-3 bg-white border border-stone-100 p-3.5 rounded-2xl shadow-sm inline-flex grayscale opacity-50">
-                <div className="h-4 w-4 rounded-full bg-stone-300"></div>
-                <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider">
+              <div className="flex items-center gap-3 bg-white border border-stone-100 p-4 rounded-2xl shadow-sm inline-flex opacity-60">
+                <div className="h-3 w-3 rounded-full bg-stone-300"></div>
+                <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider leading-none">
                   AGUARDANDO API...
                 </span>
               </div>

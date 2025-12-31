@@ -1,8 +1,20 @@
 
-import React from 'react';
-import { Coffee, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Coffee, Heart, Wifi } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const [isConnected, setIsConnected] = useState(false);
+  const [apiKeySuffix, setApiKeySuffix] = useState('');
+
+  useEffect(() => {
+    // Verifica se a API Key está presente no ambiente
+    const key = process.env.API_KEY;
+    if (key) {
+      setIsConnected(true);
+      setApiKeySuffix(key.slice(-4));
+    }
+  }, []);
+
   return (
     <footer className="bg-stone-50 border-t border-stone-200 pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -17,6 +29,24 @@ const Footer: React.FC = () => {
             <p className="text-stone-500 text-sm leading-relaxed mb-8">
               Levando os melhores grãos de origem controlada para todos os cantos do Brasil. Qualidade, rastreabilidade e paixão pelo café especial.
             </p>
+            
+            {/* API Status Indicator */}
+            {isConnected && (
+              <div className="flex items-center gap-3 bg-white border border-stone-200 p-3 rounded-xl shadow-sm inline-flex">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-black text-stone-900 uppercase tracking-tighter leading-none">
+                    API CONECTADA
+                  </span>
+                  <span className="text-[8px] text-stone-400 font-mono tracking-widest">
+                    ID: ****{apiKeySuffix}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           <div>

@@ -40,34 +40,29 @@ export const SUBSCRIPTION_PLANS: SubscriptionPlan[] = [
     name: 'Explorador',
     price: 'R$ 89,90',
     features: [
-      '1 Pacote de 250g/mês',
+      '2 Pacotes de 250g/mês',
       'Curadoria Bahia Cafés',
-      'Ficha técnica do produtor',
-      '10% off na loja avulsa'
+      'Ficha técnica do produtor'
     ]
   },
   {
     id: 'entusiasta',
     name: 'Entusiasta',
-    price: 'R$ 159,90',
+    price: 'R$ 119,90',
     features: [
-      '2 Pacotes de 250g/mês',
+      '3 Pacotes de 250g/mês',
       'Regiões diferentes a cada mês',
-      'Dicas de preparo exclusivas',
-      '15% off na loja avulsa',
-      'Brinde surpresa no 3º mês'
+      'Dicas de preparo exclusivas'
     ],
     recommended: true
   },
   {
     id: 'mestre',
     name: 'Mestre Cafeeiro',
-    price: 'R$ 229,90',
+    price: 'R$ 179,90',
     features: [
-      '3 Pacotes de 250g/mês',
-      'Acesso antecipado a microlotes',
+      '4 Pacotes de 250g/mês',
       'Workshop online trimestral',
-      '20% off na loja avulsa',
       'Frete grátis nacional'
     ]
   }

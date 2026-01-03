@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin, Instagram, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, ExternalLink, MessageSquare } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
     <section id="contato" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/3">
             <h2 className="text-4xl font-bold text-stone-900 mb-8 serif">Fale Conosco</h2>
             <p className="text-stone-600 mb-10">
@@ -60,52 +60,34 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:w-2/3">
-            <form className="bg-stone-50 p-8 md:p-12 rounded-[2rem] space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold text-stone-700 mb-2">Nome</label>
-                  <input 
-                    type="text" 
-                    placeholder="Seu nome completo"
-                    className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-stone-700 mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    placeholder="seu@email.com"
-                    className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all"
-                  />
-                </div>
+          <div className="lg:w-2/3 w-full">
+            <div className="bg-stone-50 p-12 md:p-16 rounded-[3rem] border-2 border-dashed border-stone-200 flex flex-col items-center text-center relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:rotate-12 transition-transform duration-500">
+                <MessageSquare className="w-32 h-32 text-amber-900" />
               </div>
-              <div>
-                <label className="block text-sm font-bold text-stone-700 mb-2">Assunto</label>
-                <div className="relative">
-                  <select className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all appearance-none bg-white">
-                    <option>Dúvida Geral</option>
-                    <option>Assinaturas</option>
-                    <option>Loja Online</option>
-                    <option>Parcerias</option>
-                  </select>
-                  <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-stone-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                  </div>
-                </div>
+              
+              <div className="bg-amber-100 p-6 rounded-3xl mb-8">
+                <MessageSquare className="w-12 h-12 text-amber-800" />
               </div>
-              <div>
-                <label className="block text-sm font-bold text-stone-700 mb-2">Mensagem</label>
-                <textarea 
-                  rows={5}
-                  placeholder="Como podemos te ajudar?"
-                  className="w-full px-6 py-4 rounded-xl border-2 border-white focus:border-amber-600 outline-none transition-all"
-                ></textarea>
-              </div>
-              <button className="bg-amber-700 hover:bg-amber-800 text-white font-black px-10 py-5 rounded-2xl flex items-center gap-3 transition-all transform active:scale-95 shadow-lg">
-                ENVIAR MENSAGEM <Send className="w-5 h-5" />
-              </button>
-            </form>
+              
+              <h3 className="text-3xl font-bold text-stone-900 mb-4 serif">Inicie seu atendimento</h3>
+              <p className="text-stone-600 mb-10 max-w-md text-lg">
+                Clique no botão abaixo para preencher nosso formulário oficial de contato e nossa equipe retornará em breve.
+              </p>
+              
+              <a 
+                href="https://forms.gle/aNCr4LGPyrYKQhv27" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-amber-700 hover:bg-amber-800 text-white font-black px-12 py-6 rounded-2xl flex items-center gap-3 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-amber-900/20 text-lg uppercase tracking-widest"
+              >
+                Preencher Formulário <ExternalLink className="w-6 h-6" />
+              </a>
+              
+              <p className="mt-8 text-stone-400 text-sm italic">
+                Leva menos de 1 minuto.
+              </p>
+            </div>
           </div>
         </div>
       </div>

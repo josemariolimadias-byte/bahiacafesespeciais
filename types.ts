@@ -4,6 +4,14 @@ export interface CoffeeRegion {
   name: string;
   description: string;
   imageUrl: string;
+  cities: string[];
+  climate: string;
+  terroir: string;
+  specifications: {
+    altitude: string;
+    process: string;
+    sensoryNotes: string;
+  };
 }
 
 export interface SubscriptionPlan {

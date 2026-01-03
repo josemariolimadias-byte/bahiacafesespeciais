@@ -2,13 +2,18 @@
 import React from 'react';
 import { REGIONS } from '../constants';
 import { MapPin } from 'lucide-react';
+import { CoffeeRegion } from '../types';
 
-const Regions: React.FC = () => {
+interface RegionsProps {
+  onSelectRegion: (region: CoffeeRegion) => void;
+}
+
+const Regions: React.FC<RegionsProps> = ({ onSelectRegion }) => {
   return (
     <section id="regioes" className="py-24 bg-stone-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Nossas Regiões</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4 serif">Nossas Regiões</h2>
           <p className="text-stone-600 max-w-2xl mx-auto">
             O Brasil é um continente de sabores. Conheça o terroir de cada região de onde selecionamos nossos grãos especiais.
           </p>
@@ -18,7 +23,8 @@ const Regions: React.FC = () => {
           {REGIONS.map((region) => (
             <div 
               key={region.id} 
-              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-amber-600"
+              onClick={() => onSelectRegion(region)}
+              className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-amber-600 cursor-pointer"
             >
               <div className="flex items-center gap-2 mb-4 text-amber-700">
                 <MapPin className="w-4 h-4" />

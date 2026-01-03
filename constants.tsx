@@ -6,31 +6,71 @@ export const REGIONS: CoffeeRegion[] = [
     id: 'norte-parana',
     name: 'Norte do Paraná',
     description: 'Tradição centenária com solos vulcânicos que conferem corpo e doçura equilibrada aos grãos.',
-    imageUrl: 'https://images.unsplash.com/photo-1500353391678-d7b57979d6d2?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1500353391678-d7b57979d6d2?auto=format&fit=crop&q=80&w=1200',
+    cities: ['Londrina', 'Cornélio Procópio', 'Santo Antônio da Platina', 'Jacarezinho'],
+    climate: 'Subtropical, com chuvas bem distribuídas e invernos frescos que favorecem a maturação lenta.',
+    terroir: 'Famosa "Terra Roxa", solo de origem basáltica extremamente fértil e rico em minerais.',
+    specifications: {
+      altitude: '400m - 900m',
+      process: 'Natural e Cereja Descascado',
+      sensoryNotes: 'Corpo denso, doçura caramelizada, acidez média e retrogosto prolongado.'
+    }
   },
   {
     id: 'alta-mogiana',
     name: 'Alta Mogiana Paulista',
     description: 'Altitude privilegiada e clima ideal, resultando em cafés com acidez cítrica e notas achocolatadas.',
-    imageUrl: 'https://images.unsplash.com/photo-1524350300060-d39f447a24ee?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1524350300060-d39f447a24ee?auto=format&fit=crop&q=80&w=1200',
+    cities: ['Franca', 'Cristais Paulista', 'Pedregulho', 'Altinópolis'],
+    climate: 'Tropical de altitude, com verões chuvosos e invernos secos, ideal para a secagem natural.',
+    terroir: 'Solo arenoso-argiloso com excelente drenagem em planaltos ondulados.',
+    specifications: {
+      altitude: '900m - 1250m',
+      process: 'Natural, CD e Fermentados',
+      sensoryNotes: 'Notas de chocolate e nozes, acidez cítrica brilhante e corpo aveludado.'
+    }
   },
   {
     id: 'sul-minas',
     name: 'Sul de Minas Gerais',
     description: 'A maior região produtora do mundo, oferecendo uma diversidade incrível de sabores e aromas complexos.',
-    imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200',
+    cities: ['Três Pontas', 'Varginha', 'Carmo de Minas', 'Guaxupé'],
+    climate: 'Temperado, com temperaturas médias amenas que propiciam uma produção constante de alta qualidade.',
+    terroir: 'Montanhoso, com solos diversificados que permitem microclimas únicos para variedades exóticas.',
+    specifications: {
+      altitude: '850m - 1450m',
+      process: 'Natural e Fully Washed',
+      sensoryNotes: 'Aromas florais e frutados, doçura alta de cana-de-açúcar e acidez equilibrada.'
+    }
   },
   {
     id: 'cerrado-mineiro',
     name: 'Cerrado Mineiro',
     description: 'Primeira região com Denominação de Origem no Brasil, famosa por cafés intensos e persistentes.',
-    imageUrl: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=1200',
+    cities: ['Patrocínio', 'Araguari', 'Monte Carmelo', 'Patos de Minas'],
+    climate: 'Estações bem definidas: verão quente e úmido e inverno seco, perfeito para colheita mecanizada.',
+    terroir: 'Planalto com topografia plana, facilitando o manejo e garantindo uniformidade aos lotes.',
+    specifications: {
+      altitude: '800m - 1300m',
+      process: 'Predominantemente Natural',
+      sensoryNotes: 'Corpo intenso, notas marcantes de chocolate e caramelo, acidez cítrica de média a baixa.'
+    }
   },
   {
     id: 'chapada-diamantina',
     name: 'Chapada Diamantina',
     description: 'Cafés cultivados em altas altitudes na Bahia, conhecidos por sua delicadeza floral e frescor único.',
-    imageUrl: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=1200',
+    cities: ['Piatã', 'Ibicoara', 'Mucugê', 'Seabra'],
+    climate: 'Tropical de montanha, com noites frias mesmo no verão, o que concentra açúcares no fruto.',
+    terroir: 'Solo arenoso de altitude extrema, cercado por biodiversidade preservada e águas puras.',
+    specifications: {
+      altitude: '1100m - 1500m',
+      process: 'Natural e Cereja Descascado',
+      sensoryNotes: 'Extremamente delicado, notas florais de jasmim, acidez tartárica e corpo elegante.'
+    }
   }
 ];
 

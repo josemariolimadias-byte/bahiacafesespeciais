@@ -9,18 +9,29 @@ import Subscription from './components/Subscription';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import RegionDetail from './components/RegionDetail';
+import BrewingGuide from './components/BrewingGuide';
 import { CoffeeRegion } from './types';
 
 function App() {
   const [selectedRegion, setSelectedRegion] = useState<CoffeeRegion | null>(null);
+  const [showGuide, setShowGuide] = useState(false);
 
   const handleSelectRegion = (region: CoffeeRegion) => {
     setSelectedRegion(region);
+    setShowGuide(false);
+  };
+
+  const handleOpenGuide = () => {
+    setShowGuide(true);
+    setSelectedRegion(null);
   };
 
   const handleBackToHome = () => {
     setSelectedRegion(null);
+    setShowGuide(false);
   };
+
+  const isHome = !selectedRegion && !showGuide;
 
   return (
     <div className="min-h-screen bg-stone-50 selection:bg-amber-100 selection:text-amber-900">
@@ -32,30 +43,20 @@ function App() {
             region={selectedRegion} 
             onBack={handleBackToHome} 
           />
+        ) : showGuide ? (
+          <BrewingGuide onBack={handleBackToHome} />
         ) : (
           <>
-            {/* Seção 2: Principal / Serviços */}
             <Hero />
-            
-            {/* Seção "História" solicitada no menu */}
             <History />
-            
-            {/* Seção 3: Regiões */}
             <Regions onSelectRegion={handleSelectRegion} />
-            
-            {/* Seção "Comprar Café" / Assinatura (Vendas avulsas e clube) */}
-            <Shop />
-            
-            {/* Seção 4: Assinatura */}
+            <Shop onOpenGuide={handleOpenGuide} />
             <Subscription />
-            
-            {/* Seção Contato */}
             <Contact />
           </>
         )}
       </main>
 
-      {/* Seção 5: Rodapé */}
       <Footer />
     </div>
   );

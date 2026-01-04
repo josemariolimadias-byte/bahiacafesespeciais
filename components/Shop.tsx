@@ -3,7 +3,11 @@ import React, { useState } from 'react';
 import { PRODUCTS } from '../constants';
 import { ShoppingCart, ShoppingBag, Leaf, MapPin } from 'lucide-react';
 
-const Shop: React.FC = () => {
+interface ShopProps {
+  onOpenGuide?: () => void;
+}
+
+const Shop: React.FC<ShopProps> = ({ onOpenGuide }) => {
   const [filter, setFilter] = useState('all');
 
   return (
@@ -88,7 +92,10 @@ const Shop: React.FC = () => {
                 Cada grão conta uma história diferente. Explore nosso guia de preparo e descubra como extrair o melhor de cada terroir em sua casa.
               </p>
             </div>
-            <button className="bg-white text-amber-900 font-black px-10 py-5 rounded-2xl hover:bg-amber-50 hover:scale-105 transition-all shadow-xl tracking-widest uppercase text-sm">
+            <button 
+              onClick={onOpenGuide}
+              className="bg-white text-amber-900 font-black px-10 py-5 rounded-2xl hover:bg-amber-50 hover:scale-105 transition-all shadow-xl tracking-widest uppercase text-sm"
+            >
               ACESSAR GUIA DE MESTRE
             </button>
           </div>

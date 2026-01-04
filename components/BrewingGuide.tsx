@@ -11,11 +11,13 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Nota: Para que estas imagens funcionem, os arquivos no Google Drive 
+  // devem estar com acesso configurado para "Qualquer pessoa com o link".
   const methods = [
     {
       id: 'v60',
       name: 'Hario V60',
-      imageUrl: 'https://drive.google.com/uc?id=1JlUkr59QleWNHqTb9zsTw6ACo6FAmTUc',
+      imageUrl: 'https://drive.google.com/thumbnail?id=JlUkr59QleWNHqTb9zsTw6ACo6FAmTUc&sz=w1200',
       description: 'Destaque para acidez e clareza. Ideal para cafés florais e cítricos como os da Chapada Diamantina.',
       ratio: '1:15 (Ex: 20g café / 300ml água)',
       grind: 'Média (sal de cozinha)',
@@ -30,7 +32,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'french-press',
       name: 'Prensa Francesa',
-      imageUrl: 'https://drive.google.com/uc?id=1CWowhbKXfuSSFtCf_r3DexjwoxHOD4Yv',
+      imageUrl: 'https://drive.google.com/thumbnail?id=CWowhbKXfuSSFtCf_r3DexjwoxHOD4Yv&sz=w1200',
       description: 'Enfatiza o corpo e a doçura natural. Perfeito para o Vulcano Blend e notas achocolatadas.',
       ratio: '1:12 (Ex: 30g café / 360ml água)',
       grind: 'Grossa (sal grosso)',
@@ -45,7 +47,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'aeropress',
       name: 'Aeropress',
-      imageUrl: 'https://drive.google.com/uc?id=1mZWtUBHJ1o0HxmHoky-_d1UgDmMzacvl',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1mZWtUBHJ1o0HxmHoky-_d1UgDmMzacvl&sz=w1200',
       description: 'Versatilidade total. Pode produzir desde um café concentrado tipo espresso até um filtrado limpo.',
       ratio: '1:13 (Ex: 15g café / 200ml água)',
       grind: 'Média-Fina',
@@ -60,7 +62,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'chemex',
       name: 'Chemex',
-      imageUrl: 'https://drive.google.com/uc?id=111modwmzZyhV_bCrCVqJAxllkKl8IXZl',
+      imageUrl: 'https://drive.google.com/thumbnail?id=111modwmzZyhV_bCrCVqJAxllkKl8IXZl&sz=w1200',
       description: 'Pureza máxima. O filtro de papel grosso retém óleos e sedimentos, resultando em uma xícara brilhante.',
       ratio: '1:15 (Ex: 30g café / 450ml água)',
       grind: 'Média-Grossa',
@@ -128,9 +130,10 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
                   <img 
                     src={method.imageUrl} 
                     alt={method.name}
+                    referrerPolicy="no-referrer"
                     className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
-                      // Fallback if Google Drive direct link fails due to permissions or restrictions
+                      // Fallback em caso de falha no link do Drive ou falta de permissão pública
                       (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=1200&sig=${index}`;
                     }}
                   />

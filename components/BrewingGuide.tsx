@@ -15,6 +15,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'v60',
       name: 'Hario V60',
+      imageUrl: 'https://drive.google.com/uc?id=1JlUkr59QleWNHqTb9zsTw6ACo6FAmTUc',
       description: 'Destaque para acidez e clareza. Ideal para cafés florais e cítricos como os da Chapada Diamantina.',
       ratio: '1:15 (Ex: 20g café / 300ml água)',
       grind: 'Média (sal de cozinha)',
@@ -29,6 +30,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'french-press',
       name: 'Prensa Francesa',
+      imageUrl: 'https://drive.google.com/uc?id=1CWowhbKXfuSSFtCf_r3DexjwoxHOD4Yv',
       description: 'Enfatiza o corpo e a doçura natural. Perfeito para o Vulcano Blend e notas achocolatadas.',
       ratio: '1:12 (Ex: 30g café / 360ml água)',
       grind: 'Grossa (sal grosso)',
@@ -43,6 +45,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'aeropress',
       name: 'Aeropress',
+      imageUrl: 'https://drive.google.com/uc?id=1mZWtUBHJ1o0HxmHoky-_d1UgDmMzacvl',
       description: 'Versatilidade total. Pode produzir desde um café concentrado tipo espresso até um filtrado limpo.',
       ratio: '1:13 (Ex: 15g café / 200ml água)',
       grind: 'Média-Fina',
@@ -57,6 +60,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'chemex',
       name: 'Chemex',
+      imageUrl: 'https://drive.google.com/uc?id=111modwmzZyhV_bCrCVqJAxllkKl8IXZl',
       description: 'Pureza máxima. O filtro de papel grosso retém óleos e sedimentos, resultando em uma xícara brilhante.',
       ratio: '1:15 (Ex: 30g café / 450ml água)',
       grind: 'Média-Grossa',
@@ -120,13 +124,17 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
               className={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="lg:w-1/2">
-                <div className="relative group overflow-hidden rounded-[3rem]">
+                <div className="relative group overflow-hidden rounded-[3rem] bg-stone-200">
                   <img 
-                    src={`https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=1200&sig=${index}`} 
+                    src={method.imageUrl} 
                     alt={method.name}
                     className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      // Fallback if Google Drive direct link fails due to permissions or restrictions
+                      (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1544145945-f904253d0c7b?auto=format&fit=crop&q=80&w=1200&sig=${index}`;
+                    }}
                   />
-                  <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
                 </div>
               </div>
               

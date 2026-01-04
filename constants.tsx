@@ -6,7 +6,7 @@ export const REGIONS: CoffeeRegion[] = [
     id: 'norte-parana',
     name: 'Norte do Paraná',
     description: 'Tradição centenária com solos vulcânicos que conferem corpo e doçura equilibrada aos grãos.',
-    imageUrl: 'https://drive.google.com/thumbnail?id=1NvN0Ezi12jBJkLEunpHSjwytoEVk0y2B&sz=w1200',
+    imageUrl: 'https://drive.google.com/thumbnail?id=1zWtuXTXhYGXEvSGZDYLUjBz327Y7FH7d&sz=w1200',
     cities: ['Londrina', 'Cornélio Procópio', 'Santo Antônio da Platina', 'Jacarezinho'],
     climate: 'Subtropical, com chuvas bem distribuídas e invernos frescos que favorecem a maturação lenta.',
     terroir: 'Famosa "Terra Roxa", solo de origem basáltica extremamente fértil e rico em minerais.',
@@ -41,7 +41,7 @@ export const REGIONS: CoffeeRegion[] = [
     specifications: {
       altitude: '850m - 1450m',
       process: 'Natural e Fully Washed',
-      sensoryNotes: 'Aromas florais e frutados, doçura alta de cana-de-açúcar e acidez equilibrada.'
+      sensoryNotes: 'Aromas floral e frutados, doçura alta de cana-de-açúcar e acidez equilibrada.'
     }
   },
   {

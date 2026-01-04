@@ -17,7 +17,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'v60',
       name: 'Hario V60',
-      imageUrl: 'https://drive.google.com/thumbnail?id=JlUkr59QleWNHqTb9zsTw6ACo6FAmTUc&sz=w1200',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1JlUkr59QleWNHqTb9zsTw6ACo6FAmTUc&sz=w1200',
       description: 'Destaque para acidez e clareza. Ideal para cafés florais e cítricos como os da Chapada Diamantina.',
       ratio: '1:15 (Ex: 20g café / 300ml água)',
       grind: 'Média (sal de cozinha)',
@@ -32,7 +32,7 @@ const BrewingGuide: React.FC<BrewingGuideProps> = ({ onBack }) => {
     {
       id: 'french-press',
       name: 'Prensa Francesa',
-      imageUrl: 'https://drive.google.com/thumbnail?id=CWowhbKXfuSSFtCf_r3DexjwoxHOD4Yv&sz=w1200',
+      imageUrl: 'https://drive.google.com/thumbnail?id=1CWowhbKXfuSSFtCf_r3DexjwoxHOD4Yv&sz=w1200',
       description: 'Enfatiza o corpo e a doçura natural. Perfeito para o Vulcano Blend e notas achocolatadas.',
       ratio: '1:12 (Ex: 30g café / 360ml água)',
       grind: 'Grossa (sal grosso)',

@@ -21,7 +21,11 @@ const RegionDetail: React.FC<RegionDetailProps> = ({ region, onBack }) => {
           <img 
             src={region.imageUrl} 
             alt={region.name} 
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/40 to-transparent"></div>
         </div>

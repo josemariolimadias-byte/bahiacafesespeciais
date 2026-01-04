@@ -10,9 +10,13 @@ const History: React.FC = () => {
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-amber-100 rounded-full mix-blend-multiply opacity-70 filter blur-xl"></div>
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-stone-200 rounded-full mix-blend-multiply opacity-70 filter blur-xl"></div>
             <img 
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000" 
-              alt="Plantação de Café" 
-              className="relative z-10 rounded-3xl shadow-2xl"
+              src="https://drive.google.com/thumbnail?id=1brPNd0-V07_acKDcTnmUwdGmKohM7wpp&sz=w1200" 
+              alt="Plantação de Café - Bahia Cafés Especiais" 
+              referrerPolicy="no-referrer"
+              className="relative z-10 rounded-3xl shadow-2xl w-full h-auto object-cover aspect-[4/3]"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000";
+              }}
             />
           </div>
           <div className="lg:w-1/2">

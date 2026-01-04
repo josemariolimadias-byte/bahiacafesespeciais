@@ -51,9 +51,6 @@ const Header: React.FC = () => {
               {item.label}
             </a>
           ))}
-          <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105">
-            Loja Online
-          </button>
         </nav>
 
         {/* Mobile Toggle */}
